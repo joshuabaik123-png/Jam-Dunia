@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jam Dunia (World Clock)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Jam Dunia</h2>
+        <span id="myclock" class="base-info">18:25:59</span>
+        <span class="timezone-info">Waktu Indonesia Barat (WIB)</span>
+      </div>
+
+      <!-- Form Tambah Kota -->
+      <form id="add-city-form" class="city-form">
+        <input
+          type="text"
+          id="city-name"
+          placeholder="Nama Kota (misal: Tokyo)"
+          required
+        />
+        <input
+          type="text"
+          id="city-timezone"
+          placeholder="Timezone (misal: Asia/Tokyo)"
+          required
+        />
+        <button type="submit" class="btn btn-add">+ Tambah Kota</button>
+      </form>
+      <div id="city-list" class="city-list"></div>
+    </div>
+
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <h3>Edit Kota</h3>
+        <form id="edit-city-form">
+          <input type="hidden" id="edit-city-id" />
+          <input type="text" id="edit-city-name" required />
+          <input type="text" id="edit-city-timezone" required />
+          <div class="modal-actions">
+            <button type="button" id="btn-cancel-edit" class="btn btn-cancel">Batal</button>
+            <button type="submit" class="btn btn-save">Simpan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
